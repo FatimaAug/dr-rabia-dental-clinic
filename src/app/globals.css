@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f2a2a;
+
+  --color-primary: #0e7c7b;
+  --color-primary-dark: #0a5857;
+  --color-primary-light: #e6f5f4;
+  --color-accent: #cf9b3f;
+  --color-accent-light: #f7ecd6;
+  --color-ink: #0f2a2a;
+  --color-muted: #5b7372;
+  --color-soft: #f5fbfa;
+  --font-sans-stack: "Poppins", ui-sans-serif, system-ui, -apple-system,
+    Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --font-display-stack: "Playfair Display", Georgia, "Times New Roman",
+    serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-primary-light: var(--color-primary-light);
+  --color-accent: var(--color-accent);
+  --color-accent-light: var(--color-accent-light);
+  --color-ink: var(--color-ink);
+  --color-muted: var(--color-muted);
+  --color-soft: var(--color-soft);
+  --font-sans: var(--font-sans-stack);
+  --font-display: var(--font-display-stack);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans-stack);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.font-display {
+  font-family: var(--font-display-stack);
+}
+
+@keyframes testimonialScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
