@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { services, getServiceBySlug } from "@/data/services";
 import { siteConfig } from "@/data/site";
+import JsonLd from "@/components/JsonLd";
+import { buildServicePageSchema } from "@/lib/schema";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -31,12 +33,14 @@ export default async function ServicePage({
   const service = getServiceBySlug(slug);
   if (!service) notFound();
 
+  const schema = buildServicePageSchema(service);
   const otherServices = services
     .filter((s) => s.slug !== service.slug)
     .slice(0, 6);
 
   return (
     <>
+      <JsonLd schema={schema} />
       <section className="bg-soft py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <nav className="text-sm text-muted mb-6">

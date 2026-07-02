@@ -1,4 +1,5 @@
 export const siteConfig = {
+  siteUrl: "https://drrabiadentist.com/",
   name: "Dr Rabia Noor",
   clinicName: "The Urban Dentist",
   tagline: "Best Female Dentist in Islamabad – Cosmetic Dentist in F-8 Markaz",
