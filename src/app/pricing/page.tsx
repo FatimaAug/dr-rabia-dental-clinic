@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import PricingClient from "./PricingClient";
+import JsonLd from "@/components/JsonLd";
+import { buildPricingPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Dental Pricing | Dr Rabia Noor - The Urban Dentist",
@@ -8,5 +10,10 @@ export const metadata: Metadata = {
 };
 
 export default function PricingPage() {
-  return <PricingClient />;
+  return (
+    <>
+      <JsonLd schema={buildPricingPageSchema()} />
+      <PricingClient />
+    </>
+  );
 }
